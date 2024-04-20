@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Driver Downloads</title>
+</head>
+<body>
+    <h1>Chrome Driver Downloads</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Version</th>
+                <th>Platform</th>
+                <th>Download URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for version in table_data %}
+            {% for platform in version['platforms'] %}
+            <tr>
+                <td>{{ version['version'] }}</td>
+                <td>{{ platform['platform'] }}</td>
+                <td><a href="{{ platform['url'] }}" target="_blank">Download</a></td>
+            </tr>
+            {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
