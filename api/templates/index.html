@@ -10,13 +10,14 @@
     <table border="1">
         <thead>
             <tr>
-                <th>Version</th>
-                <th>Platform</th>
+                <th>Chrome Driver Version</th>
+                <th>Designated Platform</th>
                 <th>Download URL</th>
             </tr>
         </thead>
         <tbody>
             {% for version in table_data %}
+            <h3>Version {{ version['version'] }}</h3>
             {% for platform in version['platforms'] %}
             <tr>
                 <td>{{ version['version'] }}</td>
@@ -24,6 +25,7 @@
                 <td><a href="{{ platform['url'] }}" target="_blank">Download</a></td>
             </tr>
             {% endfor %}
+            <br><br>
             {% endfor %}
         </tbody>
     </table>
