@@ -35,8 +35,6 @@ border-radius: 20px;
 <hr>
 <p>This website utlilizes the <a href="https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json">json endpoint</a> provided by <a href="https://googlechromelabs.github.io/chrome-for-testing/">GoogleChromeLabs</a> (<a href="https://github.com/GoogleChromeLabs/chrome-for-testing">GitHub</a>) to provide the links shown below.<br><b>These are newer Chrome Driver versions (from version 115 and up).</b> For older versions, you may download them from the <a href="https://chromedriver.chromium.org/downloads">official site</a>.</p>
    <br>
-    <input type="text" id="searchInput" onkeyup="search()" placeholder="Search for versions...">
-    <br>
     {% for version in table_data %}
     <h3>Version {{ version['version'] }}</h3>
     <table border="1">
