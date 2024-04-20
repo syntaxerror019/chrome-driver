@@ -3,33 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrome Driver Downloads</title>
+    <title>Chrome Downloads</title>
 </head>
 <body>
-    <h1>Chrome Driver Downloads</h1>
+    <h1>Chrome Downloads</h1>
+    {% for version in table_data %}
+    <h3>Version {{ version['version'] }}</h3>
     <table border="1">
         <thead>
             <tr>
-                <th>Chrome Driver Version</th>
-                <th>Designated Platform</th>
+                <th>Platform</th>
                 <th>Download URL</th>
             </tr>
         </thead>
         <tbody>
-            {% for version in table_data %}
-            
             {% for platform in version['platforms'] %}
-            <h3>Version {{ version['version'] }}</h3>
             <tr>
-                <td>{{ version['version'] }}</td>
                 <td>{{ platform['platform'] }}</td>
                 <td><a href="{{ platform['url'] }}" target="_blank">Download</a></td>
             </tr>
-            <br><br>
-            {% endfor %}
-            
             {% endfor %}
         </tbody>
     </table>
+    <br><br>
+    {% endfor %}
 </body>
 </html>
