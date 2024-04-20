@@ -3,16 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <title>Chrome Downloads</title>
 </head>
+<style>
+    body {
+        background-color: #0A244C;
+        color: white;
+        font-family: 'Roboto', sans-serif;
+    }
+</style>
 <body>
-    <h1>Chrome Downloads</h1>
+    <h1>Chrome WebDriver Downloads</h1>
+<hr>
+<p>This website utlilizes the <a href="https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json">json endpoint</a> provided by <a href="https://googlechromelabs.github.io/chrome-for-testing/">GoogleChromeLabs</a> (<a href="https://github.com/GoogleChromeLabs/chrome-for-testing">GitHub</a>) to provide the links shown below.<br><b>These are newer Chrome Driver versions (from version 115 and up).</b> For older versions, you may download them from the <a href="https://chromedriver.chromium.org/downloads">official site</a>.</p>
     {% for version in table_data %}
     <h3>Version {{ version['version'] }}</h3>
     <table border="1">
         <thead>
             <tr>
-                <th>Platform</th>
+                <th>Designated Platform</th>
                 <th>Download URL</th>
             </tr>
         </thead>
@@ -25,7 +35,7 @@
             {% endfor %}
         </tbody>
     </table>
-    <br><br>
+    <br>
     {% endfor %}
 </body>
 </html>
