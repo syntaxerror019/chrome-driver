@@ -8,19 +8,33 @@
 </head>
 <style>
     body {
-        padding: 20%;
-        background-color: #0A244C;
+        padding-top: 3%;
+        padding-left: 20%;
+        padding-right: 20%;
+        background-color: #0B2245;
         color: #F2F3F3;
         font-family: 'Roboto', sans-serif;
     }
     a {
        color: #4388CA;
     }
+    .contents {
+        background-color: #0E2B57;
+        padding-left: 10%;
+        padding-right: 10%;
+padding-top: 1%;
+padding-bottom: 5%;
+border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* x-offset y-offset blur-radius color */
+    }
+    
 </style>
 <body>
+<div class="contents">
     <center><h1>Chrome WebDriver Downloads</h1></center>
 <hr>
 <p>This website utlilizes the <a href="https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json">json endpoint</a> provided by <a href="https://googlechromelabs.github.io/chrome-for-testing/">GoogleChromeLabs</a> (<a href="https://github.com/GoogleChromeLabs/chrome-for-testing">GitHub</a>) to provide the links shown below.<br><b>These are newer Chrome Driver versions (from version 115 and up).</b> For older versions, you may download them from the <a href="https://chromedriver.chromium.org/downloads">official site</a>.</p>
+   <br>
     {% for version in table_data %}
     <h3>Version {{ version['version'] }}</h3>
     <table border="1">
@@ -41,5 +55,6 @@
     </table>
     <br>
     {% endfor %}
+</div>
 </body>
 </html>
